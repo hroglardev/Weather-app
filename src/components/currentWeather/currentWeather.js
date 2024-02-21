@@ -3,14 +3,28 @@ import { appendChildren } from '../../helpers/appendChildren'
 import './currentWeather.scss'
 import { selectElement } from '../../helpers/selectHtmlElement'
 import { emptyContent } from '../../helpers/emptyContent'
+import { getLocation } from '../../helpers/getCurrentLocation'
+import { fetchData } from '../../helpers/fetchData'
+const { latitude, longitude } = await getLocation()
+const { current } = await fetchData(`${latitude},${longitude}`)
 
-export const currentWeatherComponent = (cityName, country, temperature, feeling, condition, wind, humidity, icon) => {
+export const currentWeatherComponent = (
+  cityName = current.cityName,
+  country = current.country,
+  temperature = current.temperature,
+  feeling = current.feeling,
+  condition = current.condition,
+  wind = current.wind,
+  humidity = current.humidity,
+  icon = current.icon
+) => {
   const exists = selectElement('.current-weather-container')
   const card = selectElement('.card')
 
   if (exists !== null) {
     emptyContent(exists)
   }
+
   const container = createHtmlElement('div', 'current-weather-container')
   const infoContainer = createHtmlElement('div', 'current-info-container')
   const iconContainer = createHtmlElement('div', 'current-icon-container')

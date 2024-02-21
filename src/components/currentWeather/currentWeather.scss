@@ -2,15 +2,15 @@
 @use "../../styles/variables" as *;
 
 .current-weather-container {
-  @include staticGrid(1fr 3fr, auto, initial, initial, $big-gap);
+  @include flex(row, space-evenly, initial, $big-gap);
+  flex-wrap: wrap;
   
   .current-icon-container {
-    grid-column: 1 / 2;
     display: flex;
-    grid-column: 1/2;
+    width: min(100%, 300px);
     img {
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 

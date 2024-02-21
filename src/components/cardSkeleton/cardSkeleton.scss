@@ -1,0 +1,52 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.card-skeleton {
+  background-color: white;
+  width: min(1000px, 90%);
+  height: 400px;
+  margin: 0 auto;
+  padding: $content-padding-y;
+  border-radius: $medium-rounding;
+  box-shadow: $box-shadow;
+  @include flex(row, space-evenly, center, $medium-gap);
+  .icon-skeleton {
+    width: 300px;
+    background-color: $cloudy-gray;
+    height: 300px;
+    border-radius: 50%;
+    animation: skeleton 1.5s ease-in-out infinite;
+  }
+
+  .info-skeleton {
+    width: 500px;
+    height: 300px;
+    @include flex(column, center, initial, $small-gap);
+    div {
+      background-color: $cloudy-gray;
+      width: 100%;
+      animation: skeleton 1.5s ease-in-out infinite;
+      &.title-skeleton {
+        height: 35px;
+      }
+      &.paragraph-skeleton {
+        height: 20px;
+      }
+    }
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+

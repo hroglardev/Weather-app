@@ -2,7 +2,6 @@
 @use "../../styles/variables" as *;
 
 .card {
-  @include flex(column, initial, initial, $big-gap);
   background-color: white;
   width: min(1000px, 90%);
   margin: 0 auto;

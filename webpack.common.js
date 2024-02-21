@@ -15,8 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      scriptLoading: 'defer',
-      inject: 'head'
+      inject: 'body'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

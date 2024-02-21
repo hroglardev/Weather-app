@@ -3,6 +3,7 @@ import { fetchForecast } from './fetchForecast'
 export const fetchData = async (query) => {
   try {
     const response = await fetch(`${process.env.WEATHER_URL}?key=${process.env.API_KEY}&q=${query}`, { mode: 'cors' })
+
     if (!response.ok) {
       throw new Error("Couldn't retrieve the weather information")
     }

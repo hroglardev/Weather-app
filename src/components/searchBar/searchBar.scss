@@ -2,8 +2,8 @@
 @use "../../styles/variables" as *;
 
 form {
-  @include staticGrid(repeat(3, auto), default, initial,center, $small-gap);
-  align-items: center;
+  @include flex(row, center, center, $small-gap);
+  flex-wrap: wrap;
 
   .searchbar {
     font-size: 1.1rem;
