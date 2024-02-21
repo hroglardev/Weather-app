@@ -14,7 +14,7 @@ export const fetchData = async (query) => {
       country: data.location.country,
       temperature: data.current['temp_c'],
       feeling: data.current['feelslike_c'],
-      icon: data.current.condition.icon,
+      icon: `https:${data.current.condition.icon}`,
       condition: data.current.condition.text,
       wind: `${data.current['wind_kph']}`,
       humidity: `${data.current.humidity}`

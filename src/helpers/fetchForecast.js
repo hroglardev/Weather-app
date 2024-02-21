@@ -7,7 +7,7 @@ export const fetchForecast = async (query) => {
     const temps = []
 
     days.forEach((date) => {
-      conditions.push(date.day.condition.icon)
+      conditions.push(`https:${date.day.condition.icon}`)
       temps.push(`${date.day['mintemp_c']}°C`, `${date.day['maxtemp_c']}°C`)
     })
 
