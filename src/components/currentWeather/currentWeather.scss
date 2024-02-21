@@ -2,11 +2,12 @@
 @use "../../styles/variables" as *;
 
 .current-weather-container {
-  @include flex(row, space-evenly, initial, $big-gap);
-  flex-wrap: wrap;
+  @include staticGrid(0.5fr 3fr, auto, initial, initial, $big-gap);
+  justify-items: self-end;
   
   .current-icon-container {
     display: flex;
+    align-self: self-start;
     width: min(100%, 300px);
     img {
       width: 100%;
@@ -17,6 +18,10 @@
   .current-info-container {
     grid-column: 2 / 3;
     padding: $content-padding-x;
-    @include flex(column, initial, initial, $small-gap)
+    @include staticGrid(2fr 1fr, repeat(2, 1fr), initial, initial, $small-gap);
+    align-items: center;
+    .card-title {
+      grid-column: 1 / 3;
+    }
   }
 }

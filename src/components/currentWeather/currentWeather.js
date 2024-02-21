@@ -31,16 +31,16 @@ export const currentWeatherComponent = (
   const iconElement = createHtmlElement('img', 'current-weather-icon')
   iconElement.src = icon
 
-  const cityNameElement = createHtmlElement('h2', 'card-title', '', `City: ${cityName}`)
-  const countryElement = createHtmlElement('h3', 'card-title', '', `Country: ${country}`)
+  const cityNameElement = createHtmlElement('h2', 'card-title', '', `${cityName}: ${country}`)
+
   const temperatureElement = createHtmlElement('p', 'current-temp', '', `Temperature: ${temperature}°C`)
   const feelingElement = createHtmlElement('p', 'current-temp', '', `Feels like: ${feeling}°C`)
-  const conditionElement = createHtmlElement('p', 'current-condition', `Condition: ${condition}`)
+  const conditionElement = createHtmlElement('p', 'current-condition', '', `Condition: ${condition}`)
   const windElement = createHtmlElement('p', 'current-wind', '', `Wind speed: ${wind}kmph`)
   const humidityElement = createHtmlElement('p', 'current-humidity', '', `Humidity: ${humidity}%`)
 
   appendChildren(iconContainer, iconElement)
-  appendChildren(infoContainer, cityNameElement, countryElement, temperatureElement, feelingElement, conditionElement, windElement, humidityElement)
+  appendChildren(infoContainer, cityNameElement, temperatureElement, feelingElement, conditionElement, windElement, humidityElement)
   appendChildren(container, iconContainer, infoContainer)
 
   appendChildren(card, container)
