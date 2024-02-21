@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const NodePolyFillWebpackPlugin = require('node-polyfill-webpack-plugin')
+const DotenvWebpack = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -19,7 +21,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: 'styles/[id].css'
-    })
+    }),
+    new NodePolyFillWebpackPlugin(),
+    new DotenvWebpack()
   ],
   module: {
     rules: [

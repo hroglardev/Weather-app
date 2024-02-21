@@ -1,0 +1,12 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.card {
+  @include flex(column, initial, initial, $big-gap);
+  background-color: white;
+  width: min(1000px, 90%);
+  margin: 0 auto;
+  padding: $content-padding-y;
+  border-radius: $medium-rounding;
+  box-shadow: $box-shadow;
+}

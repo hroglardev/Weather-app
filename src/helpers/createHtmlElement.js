@@ -1,4 +1,4 @@
-export const createHtmlElement = (tag, classList, id) => {
+export const createHtmlElement = (tag, classList, id, text) => {
   const domElement = document.createElement(tag)
   if (classList) {
     domElement.classList.add(classList)
@@ -8,5 +8,8 @@ export const createHtmlElement = (tag, classList, id) => {
     domElement.id = id
   }
 
+  if (text) {
+    domElement.innerText = text
+  }
   return domElement
 }

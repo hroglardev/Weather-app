@@ -1,0 +1,11 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+
+.logo-container {
+  @include flex(row, initial, center, $small-gap);
+  .logo {
+    width: 100px;
+  }
+}
+

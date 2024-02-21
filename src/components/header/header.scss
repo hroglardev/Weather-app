@@ -1,0 +1,7 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+#header {
+  @include flex(row, space-between, center, 0);
+  padding: $content-padding-x $content-padding-y;
+}
