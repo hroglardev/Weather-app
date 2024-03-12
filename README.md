@@ -29,9 +29,11 @@ The app loads your current location's weather by default. It displays the curren
 
 If you want to get a specific location's forecast use the input at the top of the page to type the city name and then use the button to retrieve the data. Notice a loader will display next to the input and the page will show a skeleton while the data is being fetched.
 
-<img src="./docs-images/02-fetching.JPG"/>
+<img src="./docs-images/02-fetching.jpg"/>
 
 Once the data is fetched, the information is updated and displayed in the same format.
+
+<img src="./docs-images/03-fetched.JPG"/>
 
 # Want to track my progress?
 
